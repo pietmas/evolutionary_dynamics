@@ -1,0 +1,60 @@
+species:
+  - name: Predator
+    speed: 6
+    energy_decay: 0.995
+    max_age: 30
+    min_reproduction_age: 5
+    max_reproduction_age: 25
+    reproduction_probability: 0.5
+    reproduction_energy_threshold: 40
+    gestation_period: 1
+    birth_energy_cost: 20
+    litter_size: 2
+    mating_weight: 1.5
+    predators: []
+    diet:
+      Prey:
+        energy: 20
+        eating_probability: 0.9
+        type: 'animal'
+    pack_size: 10
+    color: "#FF0000"
+    hunger_energy_penalty: 5.0
+    death_probability: 0.02  
+    food_weight: 1.0         
+    food_weight_multiplier: 2.0  
+
+  - name: Prey
+    speed: 6
+    energy_decay: 0.995
+    max_age: 30
+    min_reproduction_age: 5
+    max_reproduction_age: 25
+    reproduction_probability: 0.5
+    reproduction_energy_threshold: 40
+    gestation_period: 1
+    birth_energy_cost: 20
+    litter_size: 2
+    mating_weight: 0.5
+    predators:
+      - Predator
+    diet:
+      grass:
+        energy: 10
+        eating_probability: 0.9
+        type: 'vegetables'
+    pack_size: 10
+    color: "#A020F0"
+    hunger_energy_penalty: 5.0
+    death_probability: 0.03  
+    food_weight: 1.0         
+    food_weight_multiplier: 1.0  
+
+simulation:
+  map_size:
+    width: 100
+    height: 100
+  ages: 10
+  initial_population:
+    Predator: 15
+    Prey: 30
