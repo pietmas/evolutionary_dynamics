@@ -20,24 +20,41 @@ The main goal of this repository is to simulate the interaction between species,
 The structure of the repository is as follows:
 
 │   general_test.ipynb
+
 │   README.md
-│
+
 ├───maps
+
 │       map_1.json
+
 │       map_2.json
+
 │       settings_map_1.json
+
 │       settings_map_2.json
+
 │
+
 ├───models
+
 │       animal.py
+
 │       environment.py
+
 │       evolutionary_species_simulation.py
+
 │       mapcell.py
+
 │       predator_prey.py
+
 │       specie.py
+
 │
+
 └───species
+
         config_evolut_simulation.yaml
+
         config_species.yaml
 
 
