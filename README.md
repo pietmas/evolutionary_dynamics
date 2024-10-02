@@ -59,3 +59,9 @@ To visualize the map, a PNG file is generated, which provides a visual represent
 
 ![Map Visualization](maps/map_1.png)
 
+
+## Notes
+
+The simulation is not yet working as expected. There are several areas that require further refinement.
+
+Further updates and fixes will be made in the coming iterations to address these issues and improve the accuracy and functionality of the simulation.
