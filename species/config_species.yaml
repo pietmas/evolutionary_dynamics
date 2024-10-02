@@ -1,5 +1,5 @@
 species:
-  - name: Predator
+  - name: Species1
     speed: 6
     energy_decay: 0.995
     max_age: 30
@@ -10,10 +10,11 @@ species:
     gestation_period: 1
     birth_energy_cost: 20
     litter_size: 2
-    mating_weight: 1.5
-    predators: []
+    mating_weight: 1.0
+    predators:
+      - Species2
     diet:
-      Prey:
+      Species2:
         energy: 20
         eating_probability: 0.9
         type: 'animal'
@@ -22,9 +23,9 @@ species:
     hunger_energy_penalty: 5.0
     death_probability: 0.02  
     food_weight: 1.0         
-    food_weight_multiplier: 2.0  
+    food_weight_multiplier: 2.0
 
-  - name: Prey
+  - name: Species2
     speed: 6
     energy_decay: 0.995
     max_age: 30
@@ -35,20 +36,46 @@ species:
     gestation_period: 1
     birth_energy_cost: 20
     litter_size: 2
-    mating_weight: 0.5
+    mating_weight: 1.0
     predators:
-      - Predator
+      - Species3
     diet:
-      grass:
-        energy: 10
+      Species3:
+        energy: 20
         eating_probability: 0.9
-        type: 'vegetables'
+        type: 'animal'
     pack_size: 10
-    color: "#A020F0"
+    color: "#00FF00"
     hunger_energy_penalty: 5.0
-    death_probability: 0.03  
+    death_probability: 0.02  
     food_weight: 1.0         
-    food_weight_multiplier: 1.0  
+    food_weight_multiplier: 2.0
+
+  - name: Species3
+    speed: 6
+    energy_decay: 0.995
+    max_age: 30
+    min_reproduction_age: 5
+    max_reproduction_age: 25
+    reproduction_probability: 0.5
+    reproduction_energy_threshold: 40
+    gestation_period: 1
+    birth_energy_cost: 20
+    litter_size: 2
+    mating_weight: 1.0
+    predators:
+      - Species1
+    diet:
+      Species1:
+        energy: 20
+        eating_probability: 0.9
+        type: 'animal'
+    pack_size: 10
+    color: "#0000FF"
+    hunger_energy_penalty: 5.0
+    death_probability: 0.02  
+    food_weight: 1.0         
+    food_weight_multiplier: 2.0  
 
 simulation:
   map_size:
@@ -56,5 +83,6 @@ simulation:
     height: 100
   ages: 10
   initial_population:
-    Predator: 15
-    Prey: 30
+    Species1: 15
+    Species2: 15
+    Species3: 15
