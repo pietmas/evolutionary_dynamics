@@ -81,8 +81,8 @@ simulation:
   map_size:
     width: 100
     height: 100
-  ages: 10
+  ages: 80
   initial_population:
-    Species1: 15
-    Species2: 15
-    Species3: 15
+    Species1: 40
+    Species2: 40
+    Species3: 40

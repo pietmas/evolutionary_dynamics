@@ -46,14 +46,14 @@ class Animal:
         random_movement_weight = self.specie.random_movement_weight
         
 
-        weight_sum = (separation_weight + self.specie.alignment_weight + self.specie.cohesion_weight +
+        weight_sum = (self.specie.separation_weight + self.specie.alignment_weight + self.specie.cohesion_weight +
                       self.specie.avoidance_weight + self.food_weight + self.specie.mating_weight +
                       self.specie.boundary_avoidance_weight + random_movement_weight)
 
         # Normalize weights
-        separation_weight /= weight_sum
-        self.alignment_weight /= weight_sum
-        self.cohesion_weight /= weight_sum
+        self.separation_weight = self.specie.separation_weight / weight_sum
+        self.alignment_weight = self.specie.alignment_weight / weight_sum
+        self.cohesion_weight = self.specie.cohesion_weight / weight_sum
         self.avoidance_weight /= weight_sum
         self.food_weight /= weight_sum
         self.mating_weight = self.specie.mating_weight / weight_sum
@@ -182,7 +182,7 @@ class Animal:
 
         # Combine Movement Vectors with Weights
         movement = (
-            separation_weight * separation +
+            self.separation_weight * separation +
             self.alignment_weight * alignment +
             self.cohesion_weight * cohesion +
             self.avoidance_weight * avoidance +
