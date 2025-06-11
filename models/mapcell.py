@@ -3,8 +3,8 @@ import webcolors
 import numpy as np
 
 class MapCells:
-    def __init__(self, map_jason, map_settings):
-        self.map = map_jason
+    def __init__(self, map_json, map_settings):
+        self.map = map_json
         self.settings = map_settings
         self.height = len(self.map)
         self.width = len(self.map[0])
