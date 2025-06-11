@@ -46,9 +46,16 @@ class Animal:
         random_movement_weight = self.specie.random_movement_weight
         
 
-        weight_sum = (self.specie.separation_weight + self.specie.alignment_weight + self.specie.cohesion_weight +
-                      self.specie.avoidance_weight + self.food_weight + self.specie.mating_weight +
-                      self.specie.boundary_avoidance_weight + random_movement_weight)
+        weight_sum = (
+            self.specie.separation_weight
+            + self.specie.alignment_weight
+            + self.specie.cohesion_weight
+            + self.avoidance_weight
+            + self.food_weight
+            + self.specie.mating_weight
+            + self.specie.boundary_avoidance_weight
+            + random_movement_weight
+        )
 
         # Normalize weights
         self.separation_weight = self.specie.separation_weight / weight_sum
